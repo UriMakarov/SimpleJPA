@@ -5,6 +5,9 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 @Table(name = "employees")
 @Entity
@@ -18,5 +21,15 @@ public class Employee {
     private String lastName;
     private double salary;
     private String department;
+
+//    @OneToMany(mappedBy = "payments")
+//    List<Payment> payments;
+//    public List<Payment> getPayments() {
+//        return payments;
+//    }
+//    public void setPayments(List<Payment> payments) {
+//        this.payments = payments;
+//    }
+
 }
 
