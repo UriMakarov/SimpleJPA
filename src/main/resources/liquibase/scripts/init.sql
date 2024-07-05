@@ -1,7 +1,5 @@
 -- liquibase formatted sql
 
-drop table if exists employees cascade;
-
 create table employees
 (
     id         integer        not null
@@ -14,8 +12,6 @@ create table employees
 );
 
 create sequence employee_seq;
-
-drop table if exists payments cascade;
 
 create table payments
 (
@@ -30,3 +26,18 @@ create table payments
 );
 
 create sequence payment_seq;
+
+
+INSERT INTO employees (id, first_name, last_name, department, salary) VALUES
+(1, 'John', 'Doe', 'IT', 1000.00),
+(2, 'Jane', 'Smith', 'HR', 1500.00),
+(3, 'Alice', 'Johnson', 'Marketing', 1200.00);
+
+INSERT INTO payments (id, amount, comment, id_employee) VALUES
+(20, 1000.00, 'Monthly salary', 1),
+(21, 500.00, 'Monthly salary', 2),
+(22, 1000.00, 'Monthly salary', 3),
+(23, 1500.00, 'Overtime payment', 2),
+(24, 1200.00, 'Bonus', 3);
+
+commit;
