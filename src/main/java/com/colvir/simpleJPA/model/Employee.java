@@ -22,7 +22,7 @@ public class Employee {
     private double salary;
     private String department;
 
-    @OneToMany(mappedBy = "employee")
+    @OneToMany(mappedBy = "employee", fetch = FetchType.LAZY)
     List<Payment> payments;
     public List<Payment> getPayments() {
         return payments;
