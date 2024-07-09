@@ -2,6 +2,7 @@ package com.colvir.simpleJPA.model;
 
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +13,7 @@ import java.util.List;
 @Table(name = "employees")
 @Entity
 @NoArgsConstructor
+@AllArgsConstructor
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "emp_seq")
@@ -23,13 +25,8 @@ public class Employee {
     private String department;
 
     @OneToMany(mappedBy = "employee", fetch = FetchType.LAZY)
-    List<Payment> payments;
-    public List<Payment> getPayments() {
-        return payments;
-    }
-    public void setPayments(List<Payment> payments) {
-        this.payments = payments;
-    }
+    private List<Payment> payments;
+
 
 }
 

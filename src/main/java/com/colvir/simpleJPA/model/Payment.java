@@ -20,7 +20,7 @@ public class Payment {
 
     private String Comment;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = true)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_employee", referencedColumnName = "id")
     private Employee employee;
 

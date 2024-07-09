@@ -1,7 +1,7 @@
 version: '3'
 services:
   app:
-    container_name: SimpleJPA
+    container_name: simpleJPA
     build: . # путь к Dockerfile вашего приложения
     ports:
       - "8080:8080"
